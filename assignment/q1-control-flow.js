@@ -12,4 +12,18 @@ let databaseCredential = "devuser:password";
 
 // Task: Add code here
 
+
+switch(env) {
+    case "STAGE":
+        databaseCredential = "stageuser:password";
+        break;
+    case "PROD":
+        databaseCredential = "produser:password";
+        break;
+    default:
+        // No change for "DEV" environment
+}
+
+
+
 console.log(`Database credential for environment ${env} is ${databaseCredential}`);
